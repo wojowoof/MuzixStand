@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F4E0C38D2059CEB200CAF782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C38C2059CEB200CAF782 /* AppDelegate.swift */; };
+		F4E0C3902059CEB200CAF782 /* MuzixStand.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C38E2059CEB200CAF782 /* MuzixStand.xcdatamodeld */; };
+		F4E0C3922059CEB200CAF782 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C3912059CEB200CAF782 /* MasterViewController.swift */; };
+		F4E0C3942059CEB200CAF782 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C3932059CEB200CAF782 /* DetailViewController.swift */; };
+		F4E0C3972059CEB200CAF782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E0C3952059CEB200CAF782 /* Main.storyboard */; };
+		F4E0C3992059CEB200CAF782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E0C3982059CEB200CAF782 /* Assets.xcassets */; };
+		F4E0C39C2059CEB200CAF782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E0C39A2059CEB200CAF782 /* LaunchScreen.storyboard */; };
+		F4E0C3A72059CEB200CAF782 /* MuzixStandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C3A62059CEB200CAF782 /* MuzixStandTests.swift */; };
+		F4E0C3B22059CEB200CAF782 /* MuzixStandUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C3B12059CEB200CAF782 /* MuzixStandUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F4E0C3A32059CEB200CAF782 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4E0C3812059CEB100CAF782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4E0C3882059CEB100CAF782;
+			remoteInfo = MuzixStand;
+		};
+		F4E0C3AE2059CEB200CAF782 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4E0C3812059CEB100CAF782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4E0C3882059CEB100CAF782;
+			remoteInfo = MuzixStand;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F4E0C3892059CEB200CAF782 /* MuzixStand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuzixStand.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4E0C38C2059CEB200CAF782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4E0C38F2059CEB200CAF782 /* MuzixStand.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MuzixStand.xcdatamodel; sourceTree = "<group>"; };
+		F4E0C3912059CEB200CAF782 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		F4E0C3932059CEB200CAF782 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F4E0C3962059CEB200CAF782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4E0C3982059CEB200CAF782 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4E0C39B2059CEB200CAF782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F4E0C39D2059CEB200CAF782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4E0C3A22059CEB200CAF782 /* MuzixStandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuzixStandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4E0C3A62059CEB200CAF782 /* MuzixStandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuzixStandTests.swift; sourceTree = "<group>"; };
+		F4E0C3A82059CEB200CAF782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4E0C3AD2059CEB200CAF782 /* MuzixStandUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuzixStandUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4E0C3B12059CEB200CAF782 /* MuzixStandUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuzixStandUITests.swift; sourceTree = "<group>"; };
+		F4E0C3B32059CEB200CAF782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4E0C3862059CEB100CAF782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4E0C39F2059CEB200CAF782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4E0C3AA2059CEB200CAF782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F4E0C3802059CEB100CAF782 = {
+			isa = PBXGroup;
+			children = (
+				F4E0C38B2059CEB200CAF782 /* MuzixStand */,
+				F4E0C3A52059CEB200CAF782 /* MuzixStandTests */,
+				F4E0C3B02059CEB200CAF782 /* MuzixStandUITests */,
+				F4E0C38A2059CEB200CAF782 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F4E0C38A2059CEB200CAF782 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4E0C3892059CEB200CAF782 /* MuzixStand.app */,
+				F4E0C3A22059CEB200CAF782 /* MuzixStandTests.xctest */,
+				F4E0C3AD2059CEB200CAF782 /* MuzixStandUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4E0C38B2059CEB200CAF782 /* MuzixStand */ = {
+			isa = PBXGroup;
+			children = (
+				F4E0C38C2059CEB200CAF782 /* AppDelegate.swift */,
+				F4E0C3912059CEB200CAF782 /* MasterViewController.swift */,
+				F4E0C3932059CEB200CAF782 /* DetailViewController.swift */,
+				F4E0C3952059CEB200CAF782 /* Main.storyboard */,
+				F4E0C3982059CEB200CAF782 /* Assets.xcassets */,
+				F4E0C39A2059CEB200CAF782 /* LaunchScreen.storyboard */,
+				F4E0C39D2059CEB200CAF782 /* Info.plist */,
+				F4E0C38E2059CEB200CAF782 /* MuzixStand.xcdatamodeld */,
+			);
+			path = MuzixStand;
+			sourceTree = "<group>";
+		};
+		F4E0C3A52059CEB200CAF782 /* MuzixStandTests */ = {
+			isa = PBXGroup;
+			children = (
+				F4E0C3A62059CEB200CAF782 /* MuzixStandTests.swift */,
+				F4E0C3A82059CEB200CAF782 /* Info.plist */,
+			);
+			path = MuzixStandTests;
+			sourceTree = "<group>";
+		};
+		F4E0C3B02059CEB200CAF782 /* MuzixStandUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F4E0C3B12059CEB200CAF782 /* MuzixStandUITests.swift */,
+				F4E0C3B32059CEB200CAF782 /* Info.plist */,
+			);
+			path = MuzixStandUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4E0C3882059CEB100CAF782 /* MuzixStand */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4E0C3B62059CEB200CAF782 /* Build configuration list for PBXNativeTarget "MuzixStand" */;
+			buildPhases = (
+				F4E0C3852059CEB100CAF782 /* Sources */,
+				F4E0C3862059CEB100CAF782 /* Frameworks */,
+				F4E0C3872059CEB100CAF782 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MuzixStand;
+			productName = MuzixStand;
+			productReference = F4E0C3892059CEB200CAF782 /* MuzixStand.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F4E0C3A12059CEB200CAF782 /* MuzixStandTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4E0C3B92059CEB200CAF782 /* Build configuration list for PBXNativeTarget "MuzixStandTests" */;
+			buildPhases = (
+				F4E0C39E2059CEB200CAF782 /* Sources */,
+				F4E0C39F2059CEB200CAF782 /* Frameworks */,
+				F4E0C3A02059CEB200CAF782 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4E0C3A42059CEB200CAF782 /* PBXTargetDependency */,
+			);
+			name = MuzixStandTests;
+			productName = MuzixStandTests;
+			productReference = F4E0C3A22059CEB200CAF782 /* MuzixStandTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F4E0C3AC2059CEB200CAF782 /* MuzixStandUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4E0C3BC2059CEB200CAF782 /* Build configuration list for PBXNativeTarget "MuzixStandUITests" */;
+			buildPhases = (
+				F4E0C3A92059CEB200CAF782 /* Sources */,
+				F4E0C3AA2059CEB200CAF782 /* Frameworks */,
+				F4E0C3AB2059CEB200CAF782 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4E0C3AF2059CEB200CAF782 /* PBXTargetDependency */,
+			);
+			name = MuzixStandUITests;
+			productName = MuzixStandUITests;
+			productReference = F4E0C3AD2059CEB200CAF782 /* MuzixStandUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4E0C3812059CEB100CAF782 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Jack Woychowski";
+				TargetAttributes = {
+					F4E0C3882059CEB100CAF782 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					F4E0C3A12059CEB200CAF782 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F4E0C3882059CEB100CAF782;
+					};
+					F4E0C3AC2059CEB200CAF782 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F4E0C3882059CEB100CAF782;
+					};
+				};
+			};
+			buildConfigurationList = F4E0C3842059CEB100CAF782 /* Build configuration list for PBXProject "MuzixStand" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F4E0C3802059CEB100CAF782;
+			productRefGroup = F4E0C38A2059CEB200CAF782 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4E0C3882059CEB100CAF782 /* MuzixStand */,
+				F4E0C3A12059CEB200CAF782 /* MuzixStandTests */,
+				F4E0C3AC2059CEB200CAF782 /* MuzixStandUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4E0C3872059CEB100CAF782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4E0C39C2059CEB200CAF782 /* LaunchScreen.storyboard in Resources */,
+				F4E0C3992059CEB200CAF782 /* Assets.xcassets in Resources */,
+				F4E0C3972059CEB200CAF782 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4E0C3A02059CEB200CAF782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4E0C3AB2059CEB200CAF782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4E0C3852059CEB100CAF782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4E0C3902059CEB200CAF782 /* MuzixStand.xcdatamodeld in Sources */,
+				F4E0C38D2059CEB200CAF782 /* AppDelegate.swift in Sources */,
+				F4E0C3922059CEB200CAF782 /* MasterViewController.swift in Sources */,
+				F4E0C3942059CEB200CAF782 /* DetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4E0C39E2059CEB200CAF782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4E0C3A72059CEB200CAF782 /* MuzixStandTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4E0C3A92059CEB200CAF782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4E0C3B22059CEB200CAF782 /* MuzixStandUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F4E0C3A42059CEB200CAF782 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4E0C3882059CEB100CAF782 /* MuzixStand */;
+			targetProxy = F4E0C3A32059CEB200CAF782 /* PBXContainerItemProxy */;
+		};
+		F4E0C3AF2059CEB200CAF782 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4E0C3882059CEB100CAF782 /* MuzixStand */;
+			targetProxy = F4E0C3AE2059CEB200CAF782 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F4E0C3952059CEB200CAF782 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4E0C3962059CEB200CAF782 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F4E0C39A2059CEB200CAF782 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4E0C39B2059CEB200CAF782 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F4E0C3B42059CEB200CAF782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F4E0C3B52059CEB200CAF782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F4E0C3B72059CEB200CAF782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y5498FS427;
+				INFOPLIST_FILE = MuzixStand/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wojones.MuzixStand;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F4E0C3B82059CEB200CAF782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y5498FS427;
+				INFOPLIST_FILE = MuzixStand/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wojones.MuzixStand;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F4E0C3BA2059CEB200CAF782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y5498FS427;
+				INFOPLIST_FILE = MuzixStandTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wojones.MuzixStandTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MuzixStand.app/MuzixStand";
+			};
+			name = Debug;
+		};
+		F4E0C3BB2059CEB200CAF782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y5498FS427;
+				INFOPLIST_FILE = MuzixStandTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wojones.MuzixStandTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MuzixStand.app/MuzixStand";
+			};
+			name = Release;
+		};
+		F4E0C3BD2059CEB200CAF782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y5498FS427;
+				INFOPLIST_FILE = MuzixStandUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wojones.MuzixStandUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MuzixStand;
+			};
+			name = Debug;
+		};
+		F4E0C3BE2059CEB200CAF782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y5498FS427;
+				INFOPLIST_FILE = MuzixStandUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wojones.MuzixStandUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MuzixStand;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4E0C3842059CEB100CAF782 /* Build configuration list for PBXProject "MuzixStand" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4E0C3B42059CEB200CAF782 /* Debug */,
+				F4E0C3B52059CEB200CAF782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4E0C3B62059CEB200CAF782 /* Build configuration list for PBXNativeTarget "MuzixStand" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4E0C3B72059CEB200CAF782 /* Debug */,
+				F4E0C3B82059CEB200CAF782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4E0C3B92059CEB200CAF782 /* Build configuration list for PBXNativeTarget "MuzixStandTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4E0C3BA2059CEB200CAF782 /* Debug */,
+				F4E0C3BB2059CEB200CAF782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4E0C3BC2059CEB200CAF782 /* Build configuration list for PBXNativeTarget "MuzixStandUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4E0C3BD2059CEB200CAF782 /* Debug */,
+				F4E0C3BE2059CEB200CAF782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F4E0C38E2059CEB200CAF782 /* MuzixStand.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F4E0C38F2059CEB200CAF782 /* MuzixStand.xcdatamodel */,
+			);
+			currentVersion = F4E0C38F2059CEB200CAF782 /* MuzixStand.xcdatamodel */;
+			path = MuzixStand.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F4E0C3812059CEB100CAF782 /* Project object */;
+}
