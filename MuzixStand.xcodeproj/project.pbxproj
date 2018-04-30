@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4622C112065BD790077E59F /* addScrapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4622C102065BD790077E59F /* addScrapViewController.swift */; };
 		F4E0C38D2059CEB200CAF782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C38C2059CEB200CAF782 /* AppDelegate.swift */; };
 		F4E0C3902059CEB200CAF782 /* MuzixStand.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C38E2059CEB200CAF782 /* MuzixStand.xcdatamodeld */; };
 		F4E0C3922059CEB200CAF782 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C3912059CEB200CAF782 /* MasterViewController.swift */; };
@@ -16,6 +17,7 @@
 		F4E0C39C2059CEB200CAF782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E0C39A2059CEB200CAF782 /* LaunchScreen.storyboard */; };
 		F4E0C3A72059CEB200CAF782 /* MuzixStandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C3A62059CEB200CAF782 /* MuzixStandTests.swift */; };
 		F4E0C3B22059CEB200CAF782 /* MuzixStandUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C3B12059CEB200CAF782 /* MuzixStandUITests.swift */; };
+		F4FEE8F220895A4200E0525A /* dataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEE8F120895A4200E0525A /* dataHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F4622C102065BD790077E59F /* addScrapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addScrapViewController.swift; sourceTree = "<group>"; };
 		F4E0C3892059CEB200CAF782 /* MuzixStand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuzixStand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E0C38C2059CEB200CAF782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4E0C38F2059CEB200CAF782 /* MuzixStand.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MuzixStand.xcdatamodel; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		F4E0C3AD2059CEB200CAF782 /* MuzixStandUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuzixStandUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E0C3B12059CEB200CAF782 /* MuzixStandUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuzixStandUITests.swift; sourceTree = "<group>"; };
 		F4E0C3B32059CEB200CAF782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4FEE8F120895A4200E0525A /* dataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +109,12 @@
 				F4E0C3912059CEB200CAF782 /* MasterViewController.swift */,
 				F4E0C3932059CEB200CAF782 /* DetailViewController.swift */,
 				F4E0C3952059CEB200CAF782 /* Main.storyboard */,
+				F4FEE8F120895A4200E0525A /* dataHelper.swift */,
 				F4E0C3982059CEB200CAF782 /* Assets.xcassets */,
 				F4E0C39A2059CEB200CAF782 /* LaunchScreen.storyboard */,
 				F4E0C39D2059CEB200CAF782 /* Info.plist */,
 				F4E0C38E2059CEB200CAF782 /* MuzixStand.xcdatamodeld */,
+				F4622C102065BD790077E59F /* addScrapViewController.swift */,
 			);
 			path = MuzixStand;
 			sourceTree = "<group>";
@@ -266,9 +272,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4E0C3902059CEB200CAF782 /* MuzixStand.xcdatamodeld in Sources */,
+				F4622C112065BD790077E59F /* addScrapViewController.swift in Sources */,
 				F4E0C38D2059CEB200CAF782 /* AppDelegate.swift in Sources */,
 				F4E0C3922059CEB200CAF782 /* MasterViewController.swift in Sources */,
 				F4E0C3942059CEB200CAF782 /* DetailViewController.swift in Sources */,
+				F4FEE8F220895A4200E0525A /* dataHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

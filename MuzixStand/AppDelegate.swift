@@ -25,6 +25,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
         let controller = masterNavigationController.topViewController as! MasterViewController
         controller.managedObjectContext = self.persistentContainer.viewContext
+
+        let dH = dataHelper(context:persistentContainer.viewContext)
+        print("Existing piles:")
+        dH.dumpPiles()
+        if dH.getPiles().count <= 0 {
+            print("Priming pile list")
+            dH.seedPiles();
+            print("Piles now:")
+            dH.dumpPiles()
+        }
         return true
     }
 
