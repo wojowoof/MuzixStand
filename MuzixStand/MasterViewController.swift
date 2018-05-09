@@ -15,7 +15,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     var managedObjectContext: NSManagedObjectContext?
     var myxtrabutton : UIBarButtonItem? = nil
 
-    @IBOutlet weak var scrapsnplans: UIBarButtonItem!
+    @IBOutlet weak var scrapsnpiles: UISegmentedControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,8 +52,46 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func scrapsnpiles(_ sender: Any) {
+        switch scrapsnpiles.selectedSegmentIndex {
+        case 0:
+            print("Show scraps")
+        case 1:
+            print("Show piles")
+        default:
+            break
+        }
+        tableView.reloadData()
+    }
+
     @objc
     func insertNewObject(_ sender: Any) {
+        switch scrapsnpiles.selectedSegmentIndex {
+        case 0:
+            print("Add a scrap")
+            self.insertNewScrap(sender)
+        case 1:
+            print("Add a pile")
+            insertNewPile(sender)
+        default:
+            break
+        }
+    }
+
+    func insertNewPile(_ sender: Any) {
+        let ctx = self.fetchedResultsController.managedObjectContext
+        let newPile = Pile(context: ctx)
+
+        newPile.name = "New Pile"
+        do {
+            try ctx.save()
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+    }
+
+    func insertNewScrap(_ sender: Any) {
         let context = self.fetchedResultsController.managedObjectContext
         let newScrap = Scrap(context: context)
              
@@ -90,18 +128,29 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     // MARK: - Table View
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return fetchedResultsController.sections?.count ?? 0
+        if (0 == scrapsnpiles.selectedSegmentIndex) {
+            return fetchedResultsController.sections?.count ?? 0
+        } else {
+            return fRC2.sections?.count ?? 0
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionInfo = fetchedResultsController.sections![section]
-        return sectionInfo.numberOfObjects
+        if (0 == scrapsnpiles.selectedSegmentIndex) {
+            return fetchedResultsController.sections![section].numberOfObjects
+        } // else
+        return fRC2.sections![section].numberOfObjects
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"Cell", for:indexPath)
-        let event = fetchedResultsController.object(at: indexPath)
-        configureCell(cell, withEvent: event)
+        if (0 == scrapsnpiles.selectedSegmentIndex) {
+            let scrap = fetchedResultsController.object(at: indexPath)
+            configureScrapCell(cell, withScrap: scrap)
+        } else {
+            let pile = fRC2.object(at: indexPath)
+            configurePileCell(cell, withPile: pile)
+        }
         return cell
     }
 
@@ -112,11 +161,16 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let context = fetchedResultsController.managedObjectContext
-            context.delete(fetchedResultsController.object(at: indexPath))
+            var moc: NSManagedObjectContext? = nil
+            if (0 == scrapsnpiles.selectedSegmentIndex) {
+                moc = fetchedResultsController.managedObjectContext
+            } else {
+                moc = fRC2.managedObjectContext
+            }
+            moc!.delete(fetchedResultsController.object(at: indexPath))
                 
             do {
-                try context.save()
+                try moc!.save()
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -126,50 +180,74 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
 
-    func configureCell(_ cell: UITableViewCell, withEvent event: Scrap) {
+    func configureScrapCell(_ cell: UITableViewCell, withScrap scrap: Scrap) {
         //cell.textLabel!.text = event.timestamp!.description
-        if event.name == nil {
+        if scrap.name == nil {
             cell.textLabel!.text = "no name"
         } else {
-            cell.textLabel!.text = "scrap " + event.name!.description
+            cell.textLabel!.text = "scrap " + scrap.name!.description
         }
     }
 
+    func configurePileCell(_ cell: UITableViewCell, withPile pile: Pile) {
+
+    }
+
     // MARK: - Fetched results controller
+    var fRC2: NSFetchedResultsController<Pile> {
+        let fR : NSFetchRequest<Pile> = Pile.fetchRequest()
+        fR.fetchBatchSize = 20
+        let sorter1 = NSSortDescriptor(key: "name", ascending: true)
+        fR.sortDescriptors = [ sorter1 ]
+        let anFRC = NSFetchedResultsController(fetchRequest: fR, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: "Master2")
+        anFRC.delegate = self
+        _fRC2 = anFRC
+
+        do {
+            try _fRC2!.performFetch()
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+        return _fRC2!
+    }
+
+    var _fRC2: NSFetchedResultsController<Pile>? = nil
 
     var fetchedResultsController: NSFetchedResultsController<Scrap> {
         if _fetchedResultsController != nil {
             return _fetchedResultsController!
         }
-        
+
         let fetchRequest: NSFetchRequest<Scrap> = Scrap.fetchRequest()
         
         // Set the batch size to a suitable number.
         fetchRequest.fetchBatchSize = 20
-        
+
         // Edit the sort key as appropriate.
         let sortDescriptor1 = NSSortDescriptor(key: "name", ascending: true)
         let sortDescriptor2 = NSSortDescriptor(key: "piles.name", ascending: true)
-        
+
         fetchRequest.sortDescriptors = [sortDescriptor2, sortDescriptor1]
-        
+
         // Edit the section name key path and cache name if appropriate.
         // nil for section name key path means "no sections".
         let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: "piles.name", cacheName: "Master")
         aFetchedResultsController.delegate = self
         _fetchedResultsController = aFetchedResultsController
-        
+
         do {
             try _fetchedResultsController!.performFetch()
         } catch {
-             // Replace this implementation with code to handle the error appropriately.
-             // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-             let nserror = error as NSError
-             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
-        
+
         return _fetchedResultsController!
-    }    
+    }
+
     var _fetchedResultsController: NSFetchedResultsController<Scrap>? = nil
 
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -194,9 +272,17 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             case .delete:
                 tableView.deleteRows(at: [indexPath!], with: .fade)
             case .update:
-                configureCell(tableView.cellForRow(at: indexPath!)!, withEvent: anObject as! Scrap)
+                if (0 == scrapsnpiles.selectedSegmentIndex) {
+                    configureScrapCell(tableView.cellForRow(at: indexPath!)!, withScrap: anObject as! Scrap)
+                } else {
+                    configurePileCell(tableView.cellForRow(at: indexPath!)!, withPile: anObject as! Pile)
+            }
             case .move:
-                configureCell(tableView.cellForRow(at: indexPath!)!, withEvent: anObject as! Scrap)
+                if (0 == scrapsnpiles.selectedSegmentIndex) {
+                    configureScrapCell(tableView.cellForRow(at: indexPath!)!, withScrap: anObject as! Scrap)
+                } else {
+                    configurePileCell(tableView.cellForRow(at: indexPath!)!, withPile: anObject as! Pile)
+                }
                 tableView.moveRow(at: indexPath!, to: newIndexPath!)
         }
     }

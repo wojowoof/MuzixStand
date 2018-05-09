@@ -162,11 +162,14 @@
                                     <segment title="Scraps"/>
                                     <segment title="Piles"/>
                                 </segments>
+                                <connections>
+                                    <action selector="scrapsnpiles:" destination="7bK-jq-Zjz" eventType="valueChanged" id="Xd4-vq-q6w"/>
+                                </connections>
                             </segmentedControl>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="scrapsnplans" destination="mK3-9e-kb2" id="hxm-gw-FsP"/>
+                        <outlet property="scrapsnpiles" destination="Unn-9b-dIl" id="Ev2-8o-UeJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
