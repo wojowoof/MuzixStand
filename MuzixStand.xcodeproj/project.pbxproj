@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F425DD6420AE43F6004D9672 /* PileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F425DD6320AE43F6004D9672 /* PileDetailViewController.swift */; };
 		F4622C112065BD790077E59F /* addScrapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4622C102065BD790077E59F /* addScrapViewController.swift */; };
+		F4851EEF20A4B05200811D67 /* DetailViewContainerCtrlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4851EEE20A4B05200811D67 /* DetailViewContainerCtrlViewController.swift */; };
+		F4851EF120A5637900811D67 /* ScrapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4851EF020A5637900811D67 /* ScrapDetailViewController.swift */; };
 		F4E0C38D2059CEB200CAF782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C38C2059CEB200CAF782 /* AppDelegate.swift */; };
 		F4E0C3902059CEB200CAF782 /* MuzixStand.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C38E2059CEB200CAF782 /* MuzixStand.xcdatamodeld */; };
 		F4E0C3922059CEB200CAF782 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C3912059CEB200CAF782 /* MasterViewController.swift */; };
-		F4E0C3942059CEB200CAF782 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0C3932059CEB200CAF782 /* DetailViewController.swift */; };
 		F4E0C3972059CEB200CAF782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E0C3952059CEB200CAF782 /* Main.storyboard */; };
 		F4E0C3992059CEB200CAF782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E0C3982059CEB200CAF782 /* Assets.xcassets */; };
 		F4E0C39C2059CEB200CAF782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E0C39A2059CEB200CAF782 /* LaunchScreen.storyboard */; };
@@ -38,12 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F425DD6320AE43F6004D9672 /* PileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PileDetailViewController.swift; sourceTree = "<group>"; };
 		F4622C102065BD790077E59F /* addScrapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addScrapViewController.swift; sourceTree = "<group>"; };
+		F4851EEE20A4B05200811D67 /* DetailViewContainerCtrlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewContainerCtrlViewController.swift; sourceTree = "<group>"; };
+		F4851EF020A5637900811D67 /* ScrapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapDetailViewController.swift; sourceTree = "<group>"; };
 		F4E0C3892059CEB200CAF782 /* MuzixStand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuzixStand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E0C38C2059CEB200CAF782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4E0C38F2059CEB200CAF782 /* MuzixStand.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MuzixStand.xcdatamodel; sourceTree = "<group>"; };
 		F4E0C3912059CEB200CAF782 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		F4E0C3932059CEB200CAF782 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F4E0C3962059CEB200CAF782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4E0C3982059CEB200CAF782 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4E0C39B2059CEB200CAF782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -107,8 +111,10 @@
 			children = (
 				F4E0C38C2059CEB200CAF782 /* AppDelegate.swift */,
 				F4E0C3912059CEB200CAF782 /* MasterViewController.swift */,
-				F4E0C3932059CEB200CAF782 /* DetailViewController.swift */,
 				F4E0C3952059CEB200CAF782 /* Main.storyboard */,
+				F4851EF020A5637900811D67 /* ScrapDetailViewController.swift */,
+				F425DD6320AE43F6004D9672 /* PileDetailViewController.swift */,
+				F4851EEE20A4B05200811D67 /* DetailViewContainerCtrlViewController.swift */,
 				F4FEE8F120895A4200E0525A /* dataHelper.swift */,
 				F4E0C3982059CEB200CAF782 /* Assets.xcassets */,
 				F4E0C39A2059CEB200CAF782 /* LaunchScreen.storyboard */,
@@ -271,11 +277,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4851EEF20A4B05200811D67 /* DetailViewContainerCtrlViewController.swift in Sources */,
+				F425DD6420AE43F6004D9672 /* PileDetailViewController.swift in Sources */,
 				F4E0C3902059CEB200CAF782 /* MuzixStand.xcdatamodeld in Sources */,
 				F4622C112065BD790077E59F /* addScrapViewController.swift in Sources */,
 				F4E0C38D2059CEB200CAF782 /* AppDelegate.swift in Sources */,
 				F4E0C3922059CEB200CAF782 /* MasterViewController.swift in Sources */,
-				F4E0C3942059CEB200CAF782 /* DetailViewController.swift in Sources */,
+				F4851EF120A5637900811D67 /* ScrapDetailViewController.swift in Sources */,
 				F4FEE8F220895A4200E0525A /* dataHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

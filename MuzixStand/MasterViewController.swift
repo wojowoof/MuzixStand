@@ -11,9 +11,9 @@ import CoreData
 
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
-    var detailViewController: DetailViewController? = nil
     var managedObjectContext: NSManagedObjectContext?
     var myxtrabutton : UIBarButtonItem? = nil
+    var detailVCC: DetailViewContainerCtrl? = nil
 
     @IBOutlet weak var scrapsnpiles: UISegmentedControl!
 
@@ -35,11 +35,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         // navigationItem.rightBarButtonItem = addButton
         navigationItem.rightBarButtonItems = [addButton, editButtonItem]
-        if let split = splitViewController {
-            let controllers = split.viewControllers
-            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
-            detailViewController?.mOC = self.managedObjectContext
-        }
+
+        detailVCC = self.splitViewController!.viewControllers.last?.childViewControllers[0] as? DetailViewContainerCtrl
+        // self.splitViewController?.viewControllers.last?.presentedViewController as! DetailViewContainerCtrl
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -111,19 +109,44 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
 
     // MARK: - Segues
-
+    // Don't use this any more - do explicit segues from table selection
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-            let object = fetchedResultsController.object(at: indexPath)
-                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
-                controller.mOC = managedObjectContext
-                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
+                // Why is viewContrllers[0] != topViewController?
+                let controller = (segue.destination as! UINavigationController).viewControllers[0] as! DetailViewContainerCtrlViewController
+//                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewContainerCtrlViewController
+                if (0 == scrapsnpiles.selectedSegmentIndex) {
+                    print("Show scrap from \(indexPath)")
+                    let obj = fetchedResultsController.object(at: indexPath)
+                    controller.showScrapViewWith(scrap: obj as Scrap)
+                } else {
+                    print("Show pile from \(indexPath)")
+                    let obj = fRC2.object(at: indexPath)
+                    controller.showPileViewWith(pile: obj as Pile)
+                }
+     
+                // old way
+                if (0 == scrapsnpiles.selectedSegmentIndex) {
+                    let object = fetchedResultsController.object(at: indexPath)
+                    let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                    controller.detailItem = object
+                    controller.mOC = managedObjectContext
+                    controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                    controller.navigationItem.leftItemsSupplementBackButton = true
+                } else {
+                    let object = fRC2.object(at: indexPath)
+                    let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                    //controller.detailItem = object
+                    controller.mOC = managedObjectContext
+                    controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                    controller.navigationItem.leftItemsSupplementBackButton = true
+
+                }
             }
         }
-    }
+    } */
 
     // MARK: - Table View
 
@@ -137,17 +160,22 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (0 == scrapsnpiles.selectedSegmentIndex) {
+            print("#rows in scrap section \(section): \(fetchedResultsController.sections![section].numberOfObjects)")
             return fetchedResultsController.sections![section].numberOfObjects
-        } // else
+        }
+        // else
+        print("#rows in pile section \(section): \(fRC2.sections![section].numberOfObjects)")
         return fRC2.sections![section].numberOfObjects
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"Cell", for:indexPath)
         if (0 == scrapsnpiles.selectedSegmentIndex) {
+            print("cellForRowAt: scrap" + indexPath.description);
             let scrap = fetchedResultsController.object(at: indexPath)
             configureScrapCell(cell, withScrap: scrap)
         } else {
+            print("cellForRowAt: pile" + indexPath.description);
             let pile = fRC2.object(at: indexPath)
             configurePileCell(cell, withPile: pile)
         }
@@ -190,7 +218,23 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
 
     func configurePileCell(_ cell: UITableViewCell, withPile pile: Pile) {
-
+        if nil == pile.name {
+            cell.textLabel!.text = "unnamed pile"
+        } else {
+            cell.textLabel!.text = "pile: " + pile.name!.description
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Selected \(indexPath)")
+        //var dvcc = self.splitViewController!.viewControllers.last?.childViewControllers[0]
+        if (0 == scrapsnpiles.selectedSegmentIndex) {
+            let obj = fetchedResultsController.object(at: indexPath)
+            detailVCC!.showScrapViewWith(scrap: obj as Scrap)
+        } else {
+            let obj = fRC2.object(at: indexPath)
+            detailVCC!.showPileViewWith(pile: obj as Pile)
+        }
     }
 
     // MARK: - Fetched results controller
